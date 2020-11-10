@@ -6,13 +6,13 @@
 /*   By: calide-n <calide-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 12:50:47 by calide-n          #+#    #+#             */
-/*   Updated: 2020/11/05 12:54:41 by calide-n         ###   ########.fr       */
+/*   Updated: 2020/11/10 11:44:13 by calide-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_get_nbr_size(int nb)
+static int		ft_get_nbr_size(int nb)
 {
 	int size;
 
@@ -27,7 +27,7 @@ int		ft_get_nbr_size(int nb)
 	return (size);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char			*nbr;
 	unsigned int	nb;

@@ -6,13 +6,13 @@
 /*   By: calide-n <calide-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 13:04:21 by calide-n          #+#    #+#             */
-/*   Updated: 2020/11/08 13:58:03 by calide-n         ###   ########.fr       */
+/*   Updated: 2020/11/10 11:47:42 by calide-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_is_in_set(int c, char const *set)
+static int		ft_is_in_set(int c, char const *set)
 {
 	size_t i;
 
@@ -26,7 +26,8 @@ int		ft_is_in_set(int c, char const *set)
 	return (0);
 }
 
-char	*ft_fill_str(char const *s1, char const *set, char *str, int len)
+static char		*ft_fill_str(char const *s1, char const *set,
+				char *str, int len)
 {
 	int i;
 	int j;
@@ -45,7 +46,7 @@ char	*ft_fill_str(char const *s1, char const *set, char *str, int len)
 	return (str);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	size_t	i;

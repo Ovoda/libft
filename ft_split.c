@@ -6,13 +6,13 @@
 /*   By: calide-n <calide-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 13:01:55 by calide-n          #+#    #+#             */
-/*   Updated: 2020/11/08 13:54:32 by calide-n         ###   ########.fr       */
+/*   Updated: 2020/11/10 11:46:14 by calide-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_word_count(char const *s, char c)
+static int		ft_word_count(char const *s, char c)
 {
 	int i;
 	int count;
@@ -34,7 +34,7 @@ int		ft_word_count(char const *s, char c)
 	return (count);
 }
 
-char	**ft_malloc_tab(char **tab, char const *s, char c)
+static char		**ft_malloc_tab(char **tab, char const *s, char c)
 {
 	int i;
 	int len;
@@ -59,7 +59,7 @@ char	**ft_malloc_tab(char **tab, char const *s, char c)
 	return (tab);
 }
 
-char	**ft_fill_tab(char **tab, char const *s, char c)
+static char		**ft_fill_tab(char **tab, char const *s, char c)
 {
 	int	y;
 	int x;
@@ -87,7 +87,7 @@ char	**ft_fill_tab(char **tab, char const *s, char c)
 	return (tab);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	char	**tab;
 	int		word_count;
