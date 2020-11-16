@@ -64,7 +64,7 @@ OBJ_BONUS = $(addprefix $(OBJ_BONUS_PATH), $(OBJ_BONUS_NAME))
 
 CC = gcc $(CFLAGS)
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -ferror-limit=0
 
 # Rules
 
