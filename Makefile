@@ -3,6 +3,7 @@ NAME = libft.a
 # Path
 
 OBJ_PATH = ./objs/
+OBJ_BONUS_PATH = ./objs_bonus/
 
 # Name
 
@@ -39,22 +40,25 @@ SRC_NAME    = 	ft_memset.c			\
 		  		ft_putchar_fd.c		\
 				ft_putstr_fd.c		\
 				ft_putendl_fd.c		\
-				ft_putnbr_fd.c		\
-				ft_lstnew.c			\
-				ft_lstadd_front.c	\
-				ft_lstsize.c		\
-	    		ft_lstlast.c		\
-	    		ft_lstadd_back.c	\
-		  		ft_lstdelone.c		\
-		  		ft_lstclear.c		\
-		  		ft_lstiter.c		\
-		  		ft_lstmap.c
+				ft_putnbr_fd.c
+
+SRC_BONUS_NAME =	ft_lstnew.c			\
+					ft_lstadd_front.c	\
+					ft_lstsize.c		\
+	    			ft_lstlast.c		\
+	    			ft_lstadd_back.c	\
+		  			ft_lstdelone.c		\
+		  			ft_lstclear.c		\
+		  			ft_lstiter.c		\
+		  			ft_lstmap.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
+OBJ_BONUS_NAME = $(SRC_BONUS_NAME:.c=.o)
 
 # Files
 
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
+OBJ_BONUS = $(addprefix $(OBJ_BONUS_PATH), $(OBJ_BONUS_NAME))
 
 # Flags
 
@@ -74,9 +78,17 @@ $(OBJ_PATH)%.o: %.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@$(CC) -o $@ -c $<
 
+$(OBJ_BONUS_PATH)%.o: %.c
+	@mkdir $(OBJ_BONUS_PATH) 2> /dev/null || true
+	@$(CC) -o $@ -c $<
+
+bonus: $(OBJ_BONUS) $(OBJ)
+	@ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
+	@ranlib $(NAME)
+
 clean:
-	@rm -f $(OBJ)
-	@rmdir $(OBJ_PATH) 2> /dev/null || true
+	@rm -rf $(OBJ_PATH) 2> /dev/null || true
+	@rm -rf $(OBJ_BONUS_PATH) 2> /dev/null || true
 
 fclean: clean
 	@rm -f $(NAME)
