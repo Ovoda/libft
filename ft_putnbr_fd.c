@@ -6,7 +6,7 @@
 /*   By: calide-n <calide-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 13:00:20 by calide-n          #+#    #+#             */
-/*   Updated: 2020/11/05 13:00:27 by calide-n         ###   ########.fr       */
+/*   Updated: 2020/11/17 17:11:43 by calide-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		nb = -n;
 	}
-	if (nb > 10)
+	if (nb >= 10)
 	{
 		ft_putnbr_fd(nb / 10, fd);
 		nb = nb % 10;
