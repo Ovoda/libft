@@ -6,7 +6,7 @@
 /*   By: calide-n <calide-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 17:13:32 by calide-n          #+#    #+#             */
-/*   Updated: 2020/11/17 17:41:56 by calide-n         ###   ########.fr       */
+/*   Updated: 2020/11/18 12:43:42 by calide-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static char		*ft_strdup_to_char(char const *str, char c)
 	i = 0;
 	while (str[i] != c && str[i])
 		i++;
-	if (!(dest = (char *)malloc(sizeof(char) * i)))
+	if (!(dest = (char *)malloc(sizeof(char) * (i + 1))))
 		return (0);
 	i = 0;
 	while (str[i] && str[i] != c)
